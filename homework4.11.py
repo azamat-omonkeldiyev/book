@@ -7,7 +7,7 @@ class book:
         self.narxi = narxi
 
         try:
-            with open('raqamlar.txt', 'a', encoding='utf-8') as file:
+            with open('kitoblar.txt', 'a', encoding='utf-8') as file:
                 file.write(f"{self.id}-{self.name}-{self.muallifi}-{self.miqdori}-{self.narxi}\n")
         except FileNotFoundError:
             print("Xatolik: Fayl topilmadi!")
@@ -15,7 +15,7 @@ class book:
             print(f"Xatolik yuz berdi: {e}")
 
     def read_file(self):
-        with open('raqamlar.txt', encoding='utf-8') as file:
+        with open('kitoblar.txt', encoding='utf-8') as file:
             qatorlar = file.readlines()
             for i in qatorlar:
                 if i.strip():
@@ -30,7 +30,7 @@ Narxi: {data[4]}
 
     def choose_book(self, id_book):
         
-        with open('raqamlar.txt', 'r+', encoding='utf-8') as file:
+        with open('kitoblar.txt', 'r+', encoding='utf-8') as file:
             qatorlar = file.readlines()
             
             file.seek(0)
@@ -47,7 +47,7 @@ Narxi: {data[4]}
                     
     def delete_book(self, id_book):
         
-        with open('raqamlar.txt', 'r+', encoding='utf-8') as file:
+        with open('kitoblar.txt', 'r+', encoding='utf-8') as file:
             qatorlar = file.readlines()
             
             file.seek(0)
